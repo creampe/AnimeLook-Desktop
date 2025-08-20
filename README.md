@@ -1,34 +1,39 @@
 ![Banner](https://raw.githubusercontent.com/creampe/AnimeLook-Desktop/refs/heads/main/assets/github.png)
-# AnimeLook Masaüstü Uygulaması
 
-AnimeLook Masaüstü, anime severler için geliştirilen modern, hızlı ve hafif bir Windows uygulamasıdır. Web tarayıcısına ihtiyaç duymadan AnimeLook platformuna masaüstünüzden erişin, anime keyfinizi bölmeden sürdürebilin.
+## Language for README.md
 
----
+<a href="">🇹🇷 Turkish</a>
 
-## Özellikler
+# AnimeLook Desktop Application
 
-- ⚡ **Hafif ve Hızlı**: Web tarayıcıya kıyasla daha az kaynak kullanımı  
-- 🖼️ **Picture-in-Picture (PiP) Modu**: Çoklu görevler sırasında küçük pencerede izleme  
-- 🔄 **Otomatik Güncellemeler**: GitHub üzerinden sürüm güncellemeleri  
-- 🛠️ **Performans Ayarları**: Donanım uyumlu optimizasyon seçenekleri  
-- 🧊 **Sistem Tepsisi Entegrasyonu**: Sessiz çalıştırma ve hızlı erişim  
-- 🖥️ **Windows ile Başlatma**: Sistem açılışında otomatik başlatma  
-- ✅ **Kullanıcı Dostu Arayüz**: Modern ve sade tasarım  
+AnimeLook Desktop is a modern, fast, and lightweight Windows application developed for anime lovers. Access the AnimeLook platform from your desktop without needing a web browser, and continue enjoying anime without interruptions.
 
 ---
 
-## Ekran Görüntüleri
+## Features
+
+- ⚡ **Lightweight and Fast**: Less resource usage compared to web browsers  
+- 🖼️ **Picture-in-Picture (PiP) Mode**: Watch in a small window during multitasking  
+- 🔄 **Automatic Updates**: Version updates via GitHub  
+- 🛠️ **Performance Settings**: Hardware-compatible optimization options  
+- 🧊 **System Tray Integration**: Silent operation and quick access  
+- 🖥️ **Start with Windows**: Automatic startup with system boot  
+- ✅ **User-Friendly Interface**: Modern and clean design  
+
+---
+
+## Screenshots
 
 
 ---
 
-## Kurulum
+## Installation
 
-En son sürümü indirmek için:
+To download the latest version:
 
-[**> Son Sürümü İndir**](https://github.com/creampe/AnimeLook-Desktop/releases)
+[**> Download Latest Version**](https://github.com/creampe/AnimeLook-Desktop/releases)
 
-### Manuel Kurulum (Geliştirici Modu)
+### Manual Installation (Developer Mode)
 
 ```bash
 git clone https://github.com/creampe/AnimeLook-Desktop.git
@@ -37,65 +42,65 @@ npm install
 npm start .
 ```
 
-**Not:** Bu proje [Electron.js](https://www.electronjs.org/) tabanlıdır. Çalıştırmak için Node.js (v14+) ve npm (v6+) kurulu olmalıdır.
+**Note:** This project is based on [Electron.js](https://www.electronjs.org/). Node.js (v14+) and npm (v6+) must be installed to run it.
 
 ---
 
-## Katkıda Bulunun
+## Contribute
 
-AnimeLook topluluğu açık kaynak katkılarına açıktır! Hataları bildirin, yeni özellik önerileri paylaşın veya doğrudan katkıda bulunun.
+The AnimeLook community is open to open source contributions! Report bugs, share new feature suggestions, or contribute directly.
 
-1. Fork'layın  
-2. Yeni bir dal oluşturun (`feature/yenilik`)  
-3. Değişikliklerinizi yapın  
-4. Pull request gönderin  
-
----
-
-## Lisans
-
-Bu proje **AnimeLook Özel Lisansı** ile lisanslanmıştır.  
-Detaylar için [LICENSE](LICENSE) dosyasını inceleyebilirsiniz.
+1. Fork the repository  
+2. Create a new branch (`feature/new-feature`)  
+3. Make your changes  
+4. Submit a pull request  
 
 ---
 
-## Sıkça Sorulan Sorular (SSS)
+## License
 
-### AnimeLook Masaüstü uygulaması ücretli mi?
-Hayır. AnimeLook Masaüstü tamamen ücretsizdir ve açık kaynak bir projedir.
-
-### Uygulama Mac veya Linux'ta çalışır mı?
-Şu anda yalnızca **Windows işletim sistemi** desteklenmektedir. Diğer platformlar için ileride destek sağlanması planlanmaktadır.
-
-### Güncellemeleri nasıl alacağım?
-Uygulama, GitHub üzerinden otomatik güncellemeleri destekler. Yeni bir sürüm yayınlandığında arka planda güncellenir.
-
-### PiP (Picture-in-Picture) modu nasıl kullanılır?
-Ekranının **sol üst köşesindeki** "küçük ekran" simgesine tıklayarak PiP moduna geçebilirsiniz.
-
-### Uygulama neden antivirüs tarafından uyarı veriyor?
-Bazı antivirüs yazılımları, Electron tabanlı uygulamaları tanımadığı için uyarı verebilir. Uygulama açık kaynaklıdır, dilediğiniz zaman kaynak kodunu inceleyebilirsiniz.
-
-### Verilerim güvenli mi?
-Evet. Uygulama hiçbir şekilde kullanıcı verisi toplamaz, dışa aktarma veya izleme işlemi yapmaz. Gizliliğiniz önceliğimizdir.
+This project is licensed under the **AnimeLook Custom License**.  
+You can review the details in the [LICENSE](LICENSE) file.
 
 ---
 
-## İletişim
+## Frequently Asked Questions (FAQ)
 
-Her türlü soru, geri bildirim veya iş birliği için bizimle iletişime geçebilirsiniz:
+### Is the AnimeLook Desktop application paid?
+No. AnimeLook Desktop is completely free and an open source project.
 
-- **E-Posta (Genel):** [hello@animelook.net](mailto:hello@animelook.net)  
+### Does the application work on Mac or Linux?
+Currently, only the **Windows operating system** is supported. Support for other platforms is planned for the future.
+
+### How will I receive updates?
+The application supports automatic updates via GitHub. It updates in the background when a new version is released.
+
+### How to use PiP (Picture-in-Picture) mode?
+You can switch to PiP mode by clicking the "small screen" icon in the **top left corner** of your screen.
+
+### Why does the application trigger an antivirus warning?
+Some antivirus software may give warnings because they don't recognize Electron-based applications. The application is open source, you can examine the source code anytime.
+
+### Is my data secure?
+Yes. The application does not collect, export, or monitor user data in any way. Your privacy is our priority.
+
+---
+
+## Contact
+
+You can contact us for any questions, feedback, or collaboration:
+
+- **Email (General):** [hello@animelook.net](mailto:hello@animelook.net)  
 - **Instagram:** [@animelooknet](https://instagram.com/animelooknet)  
 
 ---
 
-## Bizi Takip Edin
+## Follow Us
 
-Anime dünyasına dair güncellemeler, yeni projeler ve topluluk haberleri için bizi sosyal medya kanallarımızdan takip edin.
+Follow us on our social media channels for updates about the anime world, new projects, and community news.
 
 ---
 
-## Destek Olun
+## Support Us
 
-Projeyi beğendiyseniz, GitHub üzerinden ⭐ vererek destek olabilirsiniz!
+If you like the project, you can support us by giving a ⭐ on GitHub!
