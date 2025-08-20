@@ -2,7 +2,7 @@
 
 ## Language for README.md
 
-<a href="">🇹🇷 Turkish</a>
+<a href="https://github.com/creampe/AnimeLook-Desktop/blob/main/.github/lang/tr/README.md">🇹🇷 Turkish</a>
 
 # AnimeLook Desktop Application
 
