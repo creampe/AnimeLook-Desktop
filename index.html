@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' https://animelook.net data:; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self' https://animelook.net; frame-src 'self' https://animelook.net">
+  <title>AnimeLook</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+  <div id="custom-titlebar">
+    <div class="window-title"></div>
+    <div class="titlebar-buttons">
+      <button id="back-button" class="nav-button" title="Geri">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        <span class="button-title">Geri</span>
+      </button>
+      <button id="forward-button" class="nav-button" title="İleri">
+        <span class="button-title">İleri</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </button>
+      <button id="reload-button" class="nav-button" title="Sayfayı Yenile">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M23 4v6h-6M1 20v-6h6M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/>
+        </svg>
+        <span class="button-title">Sayfayı Yenile</span>
+      </button>
+      <button id="clear-cache-button" class="nav-button" title="Önbelleği Temizle">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/>
+          <line x1="10" y1="11" x2="10" y2="17"/>
+          <line x1="14" y1="11" x2="14" y2="17"/>
+        </svg>
+        <span class="button-title">Önbellek Temizleme</span>
+      </button>
+      <button id="pip-button" class="nav-button" title="Video Penceresi">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+          <rect x="12" y="12" width="10" height="5" rx="2" ry="2"/>
+        </svg>
+        <span class="button-title">Picture-in-Picture Modu</span>
+      </button>
+      <button id="settings-button" class="nav-button" title="Ayarlar">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="3"/>
+          <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z"/>
+        </svg>
+        <span class="button-title">Ayarlar</span>
+      </button>
+    </div>
+    <div class="window-controls">
+      <button id="minimize-button" class="window-control-button" title="Küçült">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"/>
+        </svg>
+      </button>
+      <button id="maximize-button" class="window-control-button" title="Ekranı Kapla">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+        </svg>
+      </button>
+      <button id="close-button" class="window-control-button" title="Kapat">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+
+  <div id="loading-screen">
+    <div class="loading-content">
+      <img src="assets/loading.png" alt="AnimeLook Logo" class="loading-logo">
+      <div class="spinner-container">
+        <img src="assets/spinner.svg" alt="Yükleniyor" class="spinner">
+      </div>
+      <div class="loading-text">Yükleniyor...</div>
+    </div>
+  </div>
+
+
+  <div id="content">
+    <webview id="webview" src="https://animelook.net/" partition="persist:animelook" webpreferences="allowRunningInsecureContent=no, javascript=yes, plugins=no, contextIsolation=yes" useragent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36"></webview>
+  </div>
+
+
+  <div id="mini-video-container" style="display: none;">
+    <div id="mini-video-titlebar">
+      <div class="mini-video-title">Video Penceresi</div>
+      <button id="close-pip-button" class="mini-video-control-button" title="Kapat">
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+    <div id="mini-video-content">
+      <webview id="mini-webview"></webview>
+    </div>
+  </div>
+
+
+  <div id="settings-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Uygulama Ayarları</h2>
+        <span class="close-modal">&times;</span>
+      </div>
+      <div class="modal-body">
+        <div class="settings-group">
+          <h3>Başlangıç Ayarları</h3>
+          <div class="setting-item">
+            <label for="start-at-boot">
+              <input type="checkbox" id="start-at-boot"> Bilgisayar açıldığında başlat
+            </label>
+          </div>
+          <div class="setting-item">
+            <label for="run-in-background">
+              <input type="checkbox" id="run-in-background"> Kapatıldığında arkaplanda çalışmaya devam et
+            </label>
+          </div>
+        </div>
+        
+        <div class="settings-group">
+          <h3>Performans Ayarları</h3>
+          <div class="setting-item">
+            <label>
+              <input type="radio" name="performance-mode" value="balanced" checked> Dengeli
+            </label>
+            <p class="setting-description">Standart performans ve pil ömrü dengesi</p>
+          </div>
+          <div class="setting-item">
+            <label>
+              <input type="radio" name="performance-mode" value="performance"> Yüksek Performans
+            </label>
+            <p class="setting-description">Daha hızlı yükleme ve daha akıcı deneyim (daha fazla pil tüketir)</p>
+          </div>
+          <div class="setting-item">
+            <label>
+              <input type="radio" name="performance-mode" value="battery-saver"> Pil Tasarrufu
+            </label>
+            <p class="setting-description">Daha uzun pil ömrü için performansı azaltır</p>
+          </div>
+        </div>
+        
+        <div class="settings-group">
+          <h3>Görünüm Ayarları</h3>
+          <div class="setting-item">
+            <label for="zoom-level">Büyütme Seviyesi:</label>
+            <div class="zoom-controls">
+              <button id="zoom-out" class="zoom-button">-</button>
+              <span id="zoom-level-display">100%</span>
+              <button id="zoom-in" class="zoom-button">+</button>
+            </div>
+            <div id="app-zoom-description" class="about-info">Uygulama içeriğinin büyütme seviyesini ayarlar</div>
+          </div>
+        </div>
+
+        <div class="settings-group">
+          <h3>Uygulama Hakkında</h3>
+          <div class="setting-item">
+            <div id="app-version" class="about-info">Sürüm: <span id="version-number">-</span></div>
+            <div id="app-author" class="about-info">Geliştirici: AnimeLook</div>
+            <div id="app-description" class="about-info">AnimeLook için masaüstü uygulaması</div>
+            <div class="about-info">
+              <h3>Güncelleme Notları:</h3>
+              <div id="release-notes" class="release-notes markdown-content" style="max-height: 200px; overflow-y: auto; display: none;"></div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="settings-actions">
+          <button id="save-settings" class="primary-button">Kaydet</button>
+          <button id="cancel-settings" class="secondary-button">İptal</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="titlebar-actions">
+    <button id="update-button" class="action-button" title="Güncellemeleri Kontrol Et" style="display: none;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 2v6h-6"></path>
+        <path d="M3 12a9 9 0 0 1 15-6.7L21 8"></path>
+        <path d="M3 22v-6h6"></path>
+        <path d="M21 12a9 9 0 0 1-15 6.7L3 16"></path>
+      </svg>
+    </button>
+  </div>
+
+  <div id="update-notification" class="modal">
+    <div class="modal-content" style="width: 400px;">
+      <div class="modal-header">
+        <h2>Uygulama Güncellemesi</h2>
+        <span class="close-modal" id="close-update-modal">&times;</span>
+      </div>
+      <div class="modal-body">
+        <div id="update-message">Yeni bir güncelleme mevcut!</div>
+        <div id="update-version" style="margin-top: 10px; font-weight: bold;"></div>
+        <div id="update-notes" style="margin-top: 10px; max-height: 200px; overflow-y: auto;"></div>
+        <div id="update-progress" style="margin-top: 15px; display: none;">
+          <div class="progress-bar-container" style="background-color: #333; border-radius: 4px; height: 10px; width: 100%; overflow: hidden;">
+            <div id="progress-bar" style="background-color: #2196F3; height: 100%; width: 0%;"></div>
+          </div>
+          <div id="progress-text" style="text-align: center; margin-top: 5px; font-size: 12px;">0%</div>
+        </div>
+        <div class="settings-actions" style="margin-top: 20px;">
+          <button id="check-update-button" class="secondary-button">Kontrol Et</button>
+          <button id="download-update-button" class="secondary-button" style="display: none;">İndir</button>
+          <button id="install-update-button" class="primary-button" style="display: none;">Yükle</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="notification-system">
+    <div id="notification-box" class="notification">
+      <div class="notification-icon">
+        <svg id="notification-info-icon" class="notification-svg info" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="16" x2="12" y2="12"></line>
+          <line x1="12" y1="8" x2="12.01" y2="8"></line>
+        </svg>
+        <svg id="notification-success-icon" class="notification-svg success" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+          <polyline points="22 4 12 14.01 9 11.01"></polyline>
+        </svg>
+        <svg id="notification-warning-icon" class="notification-svg warning" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+          <line x1="12" y1="9" x2="12" y2="13"></line>
+          <line x1="12" y1="17" x2="12.01" y2="17"></line>
+        </svg>
+        <svg id="notification-error-icon" class="notification-svg error" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="15" y1="9" x2="9" y2="15"></line>
+          <line x1="9" y1="9" x2="15" y2="15"></line>
+        </svg>
+      </div>
+      <div class="notification-content">
+        <div class="notification-title">Bildirim Başlığı</div>
+        <div class="notification-message">Bildirim mesajı burada görünecek.</div>
+      </div>
+      <div class="notification-actions">
+        <button id="notification-confirm-btn" class="notification-button confirm">Tamam</button>
+        <button id="notification-cancel-btn" class="notification-button cancel">İptal</button>
+      </div>
+      <button id="notification-close-btn" class="notification-close">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </div>
+  
+  <script src="renderer.js"></script>
+</body>
+</html>

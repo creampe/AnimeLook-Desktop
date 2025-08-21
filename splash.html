@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AnimeLook Yükleniyor</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #2e2c29;
+      color: #ffffff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+      user-select: none;
+    }
+    
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background: rgba(33, 150, 243, 0.5);
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(33, 150, 243, 0.8);
+    }
+    
+    ::-webkit-scrollbar-corner {
+      background: transparent;
+    }
+    
+    .splash-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    
+    .logo {
+      width: 180px;
+      height: auto;
+      margin-bottom: 30px;
+    }
+    
+    .status-text {
+      font-size: 16px;
+      color: #2196F3;
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+    
+    .version-text {
+      font-size: 12px;
+      color: #aaa;
+      margin-bottom: 20px;
+    }
+    
+    .progress-container {
+      width: 300px;
+      background-color: #1a1a1a;
+      height: 8px;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+    
+    .progress-bar {
+      height: 100%;
+      width: 0%;
+      background-color: #2196F3;
+      transition: width 0.3s ease;
+    }
+    
+    .progress-text {
+      font-size: 12px;
+      color: #aaa;
+    }
+    
+    .spinner {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 20px;
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="splash-container">
+    <img src="assets/splash.png" alt="AnimeLook Logo" class="logo">
+    <div id="status-text" class="status-text">Uygulama Yükleniyor...</div>
+    <div id="version-text" class="version-text"></div>
+    
+    <img src="assets/spinner.svg" alt="Yükleniyor" class="spinner" id="loading-spinner" onerror="this.style.display='none'">
+    
+    <div class="progress-container" id="progress-container" style="display: none;">
+      <div class="progress-bar" id="progress-bar"></div>
+    </div>
+    <div class="progress-text" id="progress-text"></div>
+  </div>
+
+  <script>
+    const { ipcRenderer } = require('electron');
+    
+    const statusText = document.getElementById('status-text');
+    const versionText = document.getElementById('version-text');
+    const progressContainer = document.getElementById('progress-container');
+    const progressBar = document.getElementById('progress-bar');
+    const progressText = document.getElementById('progress-text');
+    const loadingSpinner = document.getElementById('loading-spinner');
+    
+ 
+    ipcRenderer.invoke('get-app-version').then(version => {
+      versionText.textContent = `Sürüm: ${version}`;
+    }).catch(err => {
+      console.error('Version bilgisi alınamadı:', err);
+      versionText.textContent = 'Sürüm: 2.7.0';
+    });
+    
+ 
+    ipcRenderer.on('splash-update-status', (event, data) => {
+      statusText.textContent = data.message || 'Uygulama Yükleniyor...';
+      
+      if (data.isUpdating) {
+        loadingSpinner.style.display = 'none';
+        progressContainer.style.display = 'block';
+        
+        if (data.progress !== undefined) {
+          const percent = Math.round(data.progress);
+          progressBar.style.width = `${percent}%`;
+          progressText.textContent = `${percent}%`;
+        }
+      }
+    });
+    
+
+    ipcRenderer.on('app-ready', () => {
+      statusText.textContent = 'Uygulama Başlatılıyor...';
+      setTimeout(() => {
+        ipcRenderer.send('show-main-window');
+      }, 500);
+    });
+    
+
+    setTimeout(() => {
+      if (statusText.textContent === 'Uygulama Yükleniyor...') {
+        statusText.textContent = 'Uygulama Başlatılıyor...';
+        setTimeout(() => {
+          ipcRenderer.send('show-main-window');
+        }, 500);
+      }
+    }, 15000);
+  </script>
+</body>
+</html>
