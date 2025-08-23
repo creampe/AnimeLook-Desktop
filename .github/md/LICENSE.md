@@ -2,7 +2,7 @@
 
 **Copyright (c) 2025 animelook.net**
 **Effective Date:** 21/08/2025
-**Official License URL:** [https://apps.animelook.net/license](https://apps.animelook.net/license)
+**Official License URL:** [https://animelook.net/license](https://animelook.net/license)
 **Licensor:** animelook.net and its designated developers/maintainers
 **Project Name (Retained Name):** **AnimeLook**, **AnimeLook Desktop App**, **AnimeLook App**
 
