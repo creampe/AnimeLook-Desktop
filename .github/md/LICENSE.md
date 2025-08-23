@@ -4,7 +4,7 @@
 **Effective Date:** 21/08/2025
 **Official License URL:** [https://animelook.net/license](https://animelook.net/license)
 **Licensor:** animelook.net and its designated developers/maintainers
-**Project Name (Retained Name):** **AnimeLook**, **AnimeLook Desktop App**, **AnimeLook App**
+**Project Name (Retained Name):** **AnimeLook**, **AnimeLook Desktop App**, **AnimeLook App, AnimeLook Desktop**
 
 SPDX-License-Identifier: AnimeLook-NC-Community-2.0
 
