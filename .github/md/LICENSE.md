@@ -132,6 +132,6 @@ Include the following text in all copies and substantial portions of the Softwar
 ```
 AnimeLook © 2025 animelook.net — Licensed under the AnimeLook Non‑Commercial Community License (ANCL) v2.0.
 This software and derivative works may be used and shared only for personal or community projects, retaining the name “AnimeLook”, with this license included, and without any commercial use. Derivatives must be licensed under ANCL v2.0 or later. No warranty; applicable global laws govern.
-License: https://apps.animelook.net/license
+License: https://animelook.net/license
 Modifications on: 21/08/2025
 ```
