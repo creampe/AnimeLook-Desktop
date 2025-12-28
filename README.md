@@ -24,6 +24,9 @@ AnimeLook Desktop is a modern, fast, and lightweight Windows application develop
 
 ## Screenshots
 
+![1](https://github.com/creampe/AnimeLook-Desktop/blob/main/.github/screenshots/3.png)
+![2](https://github.com/creampe/AnimeLook-Desktop/blob/main/.github/screenshots/2.png)
+![3](https://github.com/creampe/AnimeLook-Desktop/blob/main/.github/screenshots/1.png)
 
 ---
 
